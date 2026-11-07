@@ -2,7 +2,7 @@
 
 A calm, hand-picked home for the best free **AI, ML and Gen AI courses and talks on YouTube**, with ordered **learning paths**. Inspired by Andrej Karpathy's [HackerTube](https://hackertube.org).
 
-No algorithm, no account, no tracking. It's one static page: videos open on YouTube, and your "done" ticks stay in your own browser.
+No algorithm, no account, no tracking. It works as a static web page and as a Claude Code plugin. On the page, videos open on YouTube, and your "done" ticks stay in your own browser.
 
 ## What's inside
 
@@ -11,7 +11,46 @@ No algorithm, no account, no tracking. It's one static page: videos open on YouT
 - **Browse** by topic, course vs. talk and "must-watch", plus search (press `/`)
 - **Progress**: tick off steps in a path. This is saved in your browser's localStorage.
 
-## Run it
+## Claude Code plugin
+
+BosonTube is also a Claude Code plugin, so you can ask Claude what to learn next without leaving your terminal.
+
+**Install** (Claude Code 2.1.275 or later):
+
+```
+/plugin install bosontube --marketplace bosons14/bosontube
+```
+
+On older versions:
+
+```
+/plugin marketplace add bosons14/bosontube
+/plugin install bosontube@bosontube
+```
+
+**Skills**
+
+| Command | What it does |
+| :- | :- |
+| `/bosontube:learn [goal]` | Recommends courses and talks from the catalog for your goal and level, in watch order |
+| `/bosontube:path [id]` | Shows a learning path, your progress and the next lecture. `done <id>` / `undo <id>` track progress |
+| `/bosontube:add-course <YouTube URL>` | Looks up a course or talk, classifies it and adds it to your personal catalog |
+| `/bosontube:open [file]` | Builds your personal BosonTube page (catalog plus your additions) and opens it |
+
+You don't always need the slash command: asking "what should I watch to learn diffusion models?" or "I finished Zero to Hero" brings the right skill in on its own.
+
+Your progress and your own courses are stored in the plugin's data folder (`~/.claude/plugins/data/…`), so they survive plugin updates. The same CLI also works on its own:
+
+```bash
+python3 scripts/bt.py search "transformer" --level Beginner
+python3 scripts/bt.py path llm-scratch
+python3 scripts/bt.py done build-gpt
+python3 scripts/bt.py build --out bosontube.html
+```
+
+Without the plugin, data goes to `~/.bosontube` (or `--data-dir`).
+
+## Run the website
 
 It's a single HTML file, so you can just open `index.html` in a browser, or serve the folder:
 

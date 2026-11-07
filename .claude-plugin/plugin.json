@@ -1,0 +1,11 @@
+{
+  "name": "bosontube",
+  "displayName": "BosonTube",
+  "version": "0.1.0",
+  "description": "A curated library of free AI, ML and Gen AI courses and talks on YouTube, with learning paths, progress tracking, your own additions and a browsable web page. Inspired by Karpathy's HackerTube.",
+  "author": { "name": "Subhendra Basu", "url": "https://github.com/bosons14" },
+  "homepage": "https://github.com/bosons14/bosontube",
+  "repository": "https://github.com/bosons14/bosontube",
+  "license": "MIT",
+  "keywords": ["ai", "machine-learning", "deep-learning", "llm", "gen-ai", "courses", "youtube", "learning-paths"]
+}

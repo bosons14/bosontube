@@ -1,0 +1,13 @@
+{
+  "name": "bosontube",
+  "owner": { "name": "Subhendra Basu", "url": "https://github.com/bosons14" },
+  "metadata": { "description": "BosonTube: curated AI/ML/Gen AI courses for Claude Code" },
+  "plugins": [
+    {
+      "name": "bosontube",
+      "source": "./",
+      "description": "Curated free AI, ML and Gen AI courses on YouTube, with learning paths and progress tracking.",
+      "category": "learning"
+    }
+  ]
+}
